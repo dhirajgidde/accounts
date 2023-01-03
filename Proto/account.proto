@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "../messager";
+
+package messager;
+
+service MessageReceiver {
+    rpc EnableAccount(Account) returns (Response);
+}
+
+message Account {
+    string Title = 2;
+    string Code = 3;
+}
+
+message Response {
+    string ResponseMessage = 1;
+    optional int64 AccountID = 2;
+}
